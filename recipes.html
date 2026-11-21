@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe book</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
+  <script>
+    window.APP_NS = "recipes";
+    try {
+      var savedTheme = localStorage.getItem("recipes:theme");
+      document.documentElement.setAttribute("data-theme", savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/core.js"></script>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/store.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/pages/recipes.js"></script>
+</head>
+<body data-page="recipes">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" tabindex="-1" class="container page">
+    <h1 data-i18n="page.recipes"></h1>
+    <form id="filters" class="filters" novalidate role="search">
+      <div class="field filter-search">
+        <label for="q" data-i18n="filter.search"></label>
+        <input id="q" name="q" class="input" type="search" autocomplete="off" data-i18n-placeholder="filter.searchPlaceholder">
+      </div>
+      <fieldset class="filter-cats">
+        <legend data-i18n="filter.category"></legend>
+        <div id="catChips" class="chip-row"></div>
+      </fieldset>
+      <div class="filter-selects">
+        <div class="field"><label for="cuisine" data-i18n="filter.cuisine"></label><select id="cuisine" name="cuisine" class="input"></select></div>
+        <div class="field"><label for="maxTime" data-i18n="filter.time"></label><select id="maxTime" name="maxTime" class="input"></select></div>
+        <div class="field"><label for="level" data-i18n="filter.level"></label><select id="level" name="level" class="input"></select></div>
+        <div class="field"><label for="sort" data-i18n="filter.sort"></label><select id="sort" name="sort" class="input"></select></div>
+        <label class="check"><input type="checkbox" id="veg" name="veg"> <span data-i18n="filter.veg"></span></label>
+      </div>
+    </form>
+    <div class="list-head">
+      <p id="count" class="result-count" aria-live="polite"></p>
+      <button type="button" id="reset" class="btn btn-ghost btn-small" data-i18n="filter.reset"></button>
+    </div>
+    <div id="list" class="card-grid"></div>
+    <div id="empty" class="empty" hidden>
+      <h2 data-i18n="filter.emptyTitle"></h2>
+      <p data-i18n="filter.emptyText"></p>
+      <button type="button" id="reset2" class="btn" data-i18n="filter.reset"></button>
+    </div>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toasts" class="toast-host" aria-live="polite"></div>
+</body>
+</html>

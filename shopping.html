@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe book</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
+  <script>
+    window.APP_NS = "recipes";
+    try {
+      var savedTheme = localStorage.getItem("recipes:theme");
+      document.documentElement.setAttribute("data-theme", savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/core.js"></script>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/store.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/pages/shopping.js"></script>
+</head>
+<body data-page="shopping">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" tabindex="-1" class="container page shopping-page">
+    <h1 data-i18n="page.shopping"></h1>
+    <form id="extraForm" class="extra-form" novalidate>
+      <label for="extraInput" class="field-label" data-i18n="shop.addLabel"></label>
+      <div class="pantry-row">
+        <input id="extraInput" class="input" type="text" maxlength="80" autocomplete="off" data-i18n-placeholder="shop.addPlaceholder" aria-describedby="extraError">
+        <button type="submit" class="btn" data-i18n="shop.add"></button>
+      </div>
+      <p id="extraError" class="field-error" aria-live="polite"></p>
+    </form>
+    <div class="shop-head">
+      <p id="shopProgress" class="result-count" aria-live="polite"></p>
+      <div class="shop-actions">
+        <button type="button" id="copyList" class="btn btn-ghost btn-small"></button>
+        <button type="button" id="printList" class="btn btn-ghost btn-small"></button>
+        <button type="button" id="clearDone" class="btn btn-ghost btn-small" data-i18n="shop.clearDone"></button>
+        <button type="button" id="clearAll" class="btn btn-danger-ghost btn-small" data-i18n="shop.clearAll"></button>
+      </div>
+    </div>
+    <div id="shopList"></div>
+    <p class="hint" data-i18n="shop.staples"></p>
+    <div id="shopEmpty" class="empty" hidden>
+      <h2 data-i18n="shop.emptyTitle"></h2>
+      <p data-i18n="shop.emptyText"></p>
+      <a class="btn" href="recipes.html" data-i18n="home.allRecipes"></a>
+    </div>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toasts" class="toast-host" aria-live="polite"></div>
+</body>
+</html>

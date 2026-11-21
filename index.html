@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe book</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
+  <script>
+    window.APP_NS = "recipes";
+    try {
+      var savedTheme = localStorage.getItem("recipes:theme");
+      document.documentElement.setAttribute("data-theme", savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/core.js"></script>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/store.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/pages/home.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" tabindex="-1" class="container page home-page">
+    <section class="hero" aria-labelledby="homeTitle">
+      <h1 id="homeTitle" data-i18n="home.title"></h1>
+      <p class="page-intro" data-i18n="home.intro"></p>
+      <form id="pantryForm" class="pantry-form" novalidate>
+        <label for="pantryInput" class="field-label" data-i18n="home.addLabel"></label>
+        <div class="pantry-row">
+          <input id="pantryInput" class="input" type="text" list="ingList" autocomplete="off" data-i18n-placeholder="home.addPlaceholder" aria-describedby="pantryHint pantryError">
+          <button type="submit" class="btn" data-i18n="home.add"></button>
+        </div>
+        <datalist id="ingList"></datalist>
+        <p id="pantryHint" class="hint" data-i18n="home.hint"></p>
+        <p id="pantryError" class="field-error" aria-live="polite"></p>
+      </form>
+      <div class="quick-ings">
+        <p class="field-label" data-i18n="home.quick"></p>
+        <div id="quickIngs" class="chip-row"></div>
+      </div>
+      <div id="pantryChips" class="pantry-chips" aria-live="polite"></div>
+    </section>
+    <section id="matches" class="section" aria-labelledby="matchTitle">
+      <h2 id="matchTitle"></h2>
+      <div id="matchList" class="card-grid"></div>
+    </section>
+    <section id="ideas" class="section" aria-labelledby="ideasTitle">
+      <h2 id="ideasTitle" data-i18n="home.quickIdeas"></h2>
+      <div id="quickList" class="card-grid"></div>
+      <h2 class="section-sub" data-i18n="home.classics"></h2>
+      <div id="classicList" class="card-grid"></div>
+      <p><a class="btn btn-ghost" href="recipes.html" data-i18n="home.allRecipes"></a></p>
+    </section>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toasts" class="toast-host" aria-live="polite"></div>
+</body>
+</html>

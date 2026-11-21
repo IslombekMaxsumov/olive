@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe book</title>
+  <meta name="description" content="">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
+  <script>
+    window.APP_NS = "recipes";
+    try {
+      var savedTheme = localStorage.getItem("recipes:theme");
+      document.documentElement.setAttribute("data-theme", savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/core.js"></script>
+  <script defer src="js/lang.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/store.js"></script>
+  <script defer src="js/layout.js"></script>
+  <script defer src="js/pages/plan.js"></script>
+</head>
+<body data-page="plan">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main" tabindex="-1" class="container page">
+    <h1 data-i18n="page.plan"></h1>
+    <p class="page-intro" data-i18n="plan.intro"></p>
+    <div class="plan-actions">
+      <button type="button" id="toShopping" class="btn"></button>
+      <button type="button" id="surprise" class="btn btn-ghost" data-i18n="plan.surprise"></button>
+      <button type="button" id="clearPlan" class="btn btn-ghost" data-i18n="plan.clear"></button>
+    </div>
+    <p id="planSummary" class="result-count" aria-live="polite"></p>
+    <div id="week" class="week"></div>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toasts" class="toast-host" aria-live="polite"></div>
+</body>
+</html>
