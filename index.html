@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recipe book</title>
+  <title>OLIVE</title>
   <meta name="description" content="">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f5f5ef">
+  <link rel="icon" href="assets/brand/olive-favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@700;800&display=swap">
   <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
   <script>
     window.APP_NS = "recipes";
@@ -19,7 +23,10 @@
   <script defer src="js/core.js"></script>
   <script defer src="js/lang.js"></script>
   <script defer src="js/data.js"></script>
+  <script defer src="js/photos.js"></script>
+  <script defer src="js/format.js"></script>
   <script defer src="js/store.js"></script>
+  <script defer src="js/logo.js"></script>
   <script defer src="js/layout.js"></script>
   <script defer src="js/pages/home.js"></script>
 </head>
@@ -29,35 +36,55 @@
 
   <main id="main" tabindex="-1" class="container page home-page">
     <section class="hero" aria-labelledby="homeTitle">
-      <h1 id="homeTitle" data-i18n="home.title"></h1>
-      <p class="page-intro" data-i18n="home.intro"></p>
-      <form id="pantryForm" class="pantry-form" novalidate>
-        <label for="pantryInput" class="field-label" data-i18n="home.addLabel"></label>
-        <div class="pantry-row">
-          <input id="pantryInput" class="input" type="text" list="ingList" autocomplete="off" data-i18n-placeholder="home.addPlaceholder" aria-describedby="pantryHint pantryError">
-          <button type="submit" class="btn" data-i18n="home.add"></button>
+      <div class="hero-text">
+        <p class="annot hero-annot" id="heroAnnot"></p>
+        <h1 id="homeTitle"></h1>
+        <p class="hero-intro" data-i18n="home.intro"></p>
+        <div class="pantry">
+          <form id="pantryForm" class="pantry-form" novalidate>
+            <label for="pantryInput" class="field-label" data-i18n="home.addLabel"></label>
+            <div class="pantry-row">
+              <input id="pantryInput" class="input" type="text" list="ingList" autocomplete="off" data-i18n-placeholder="home.addPlaceholder" aria-describedby="pantryHint pantryError">
+              <button type="submit" class="btn" data-i18n="home.add"></button>
+            </div>
+            <datalist id="ingList"></datalist>
+            <p id="pantryHint" class="hint" data-i18n="home.hint"></p>
+            <p id="pantryError" class="field-error" aria-live="polite"></p>
+          </form>
+          <div class="quick-ings">
+            <p class="annot" id="quickLabel" data-i18n="home.quick"></p>
+            <div id="quickIngs" class="chip-row" role="group" aria-labelledby="quickLabel"></div>
+          </div>
+          <div id="pantryChips" class="pantry-chips" aria-live="polite"></div>
         </div>
-        <datalist id="ingList"></datalist>
-        <p id="pantryHint" class="hint" data-i18n="home.hint"></p>
-        <p id="pantryError" class="field-error" aria-live="polite"></p>
-      </form>
-      <div class="quick-ings">
-        <p class="field-label" data-i18n="home.quick"></p>
-        <div id="quickIngs" class="chip-row"></div>
       </div>
-      <div id="pantryChips" class="pantry-chips" aria-live="polite"></div>
+      <div id="heroArt" class="hero-art"></div>
     </section>
-    <section id="matches" class="section" aria-labelledby="matchTitle">
-      <h2 id="matchTitle"></h2>
-      <div id="matchList" class="card-grid"></div>
+
+    <section id="matches" class="section" aria-labelledby="matchTitle" hidden>
+      <div class="section-head"><h2 id="matchTitle"></h2></div>
+      <div id="matchList" class="matches"></div>
     </section>
-    <section id="ideas" class="section" aria-labelledby="ideasTitle">
-      <h2 id="ideasTitle" data-i18n="home.quickIdeas"></h2>
-      <div id="quickList" class="card-grid"></div>
-      <h2 class="section-sub" data-i18n="home.classics"></h2>
-      <div id="classicList" class="card-grid"></div>
-      <p><a class="btn btn-ghost" href="recipes.html" data-i18n="home.allRecipes"></a></p>
-    </section>
+
+    <div id="ideas">
+      <section class="section" aria-labelledby="featTitle"><div id="feature" class="feature"></div></section>
+      <section class="section" aria-labelledby="worldTitle">
+        <div class="section-head"><div><p class="annot" data-i18n="home.worldAnnot"></p><h2 id="worldTitle" data-i18n="home.world"></h2></div><a class="more-link" href="recipes.html" data-i18n="home.allRecipes"></a></div>
+        <div id="regions" class="regions"></div>
+      </section>
+      <section class="section" aria-labelledby="classicsTitle">
+        <div class="section-head"><div><p class="annot" data-i18n="home.classicsAnnot"></p><h2 id="classicsTitle" data-i18n="home.classics"></h2></div><a class="more-link" href="recipes.html?cuisine=central-asia" data-i18n="home.allUzbek"></a></div>
+        <div id="classicList" class="classics"></div>
+      </section>
+      <section class="section" aria-labelledby="quickTitle">
+        <div class="section-head"><div><p class="annot" data-i18n="home.quickAnnot"></p><h2 id="quickTitle" data-i18n="home.quickIdeas"></h2></div><a class="more-link" href="recipes.html?maxTime=30" data-i18n="home.allQuick"></a></div>
+        <div id="quickList" class="quick-index"></div>
+      </section>
+      <section class="section" aria-labelledby="colTitle">
+        <div class="section-head"><div><p class="annot" data-i18n="home.colAnnot"></p><h2 id="colTitle" data-i18n="home.collections"></h2></div></div>
+        <div id="collections" class="collections"></div>
+      </section>
+    </div>
   </main>
   <footer id="site-footer" class="site-footer"></footer>
   <div id="toasts" class="toast-host" aria-live="polite"></div>

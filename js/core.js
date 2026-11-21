@@ -44,7 +44,7 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#0c1226" : "#f3f6fb");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#181e19" : "#f5f5ef");
     refreshThemeButton();
   }
 
@@ -168,7 +168,11 @@
       box.appendChild(btn);
     }
     host.appendChild(box);
-    toastTimer = setTimeout(function () { host.textContent = ""; }, action ? 6000 : 2800);
+    // leave with a short animation, then remove
+    toastTimer = setTimeout(function () {
+      box.classList.add("is-leaving");
+      setTimeout(function () { if (box.parentNode) box.remove(); }, 230);
+    }, action ? 6000 : 2800);
   }
 
   /* ---------- init ---------- */

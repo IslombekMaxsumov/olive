@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recipe book</title>
+  <title>OLIVE</title>
   <meta name="description" content="">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f5f5ef">
+  <link rel="icon" href="assets/brand/olive-favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@700;800&display=swap">
   <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
   <script>
     window.APP_NS = "recipes";
@@ -19,7 +23,10 @@
   <script defer src="js/core.js"></script>
   <script defer src="js/lang.js"></script>
   <script defer src="js/data.js"></script>
+  <script defer src="js/photos.js"></script>
+  <script defer src="js/format.js"></script>
   <script defer src="js/store.js"></script>
+  <script defer src="js/logo.js"></script>
   <script defer src="js/layout.js"></script>
   <script defer src="js/pages/recipes.js"></script>
 </head>
@@ -28,33 +35,38 @@
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1" class="container page">
-    <h1 data-i18n="page.recipes"></h1>
-    <form id="filters" class="filters" novalidate role="search">
-      <div class="field filter-search">
-        <label for="q" data-i18n="filter.search"></label>
-        <input id="q" name="q" class="input" type="search" autocomplete="off" data-i18n-placeholder="filter.searchPlaceholder">
+    <p class="annot" id="listAnnot"></p>
+    <h1 class="page-title" data-i18n="page.recipes"></h1>
+    <div class="list-layout">
+      <form id="filters" class="filters" novalidate aria-labelledby="filterTitle">
+        <h2 id="filterTitle" class="visually-hidden" data-i18n="filter.title"></h2>
+        <fieldset class="filter-group">
+          <legend data-i18n="filter.category"></legend>
+          <div id="catChips" class="chip-row"></div>
+        </fieldset>
+        <div class="field"><label class="filter-label" for="cuisine" data-i18n="filter.cuisine"></label><select id="cuisine" name="cuisine" class="input"></select></div>
+        <div class="field"><label class="filter-label" for="maxTime" data-i18n="filter.time"></label><select id="maxTime" name="maxTime" class="input"></select></div>
+        <div class="field"><label class="filter-label" for="level" data-i18n="filter.level"></label><select id="level" name="level" class="input"></select></div>
+        <label class="switch"><span data-i18n="filter.veg"></span><input type="checkbox" id="veg" name="veg"></label>
+      </form>
+      <div class="list-main">
+        <div class="list-top">
+          <div class="search" role="search">
+            <label for="q" class="visually-hidden" data-i18n="filter.search"></label>
+            <input id="q" name="q" class="input" type="search" autocomplete="off" form="filters" data-i18n-placeholder="filter.searchPlaceholder">
+          </div>
+          <button type="button" id="filtersToggle" class="btn btn-ghost filters-toggle" aria-expanded="false" aria-controls="filters"></button>
+          <div class="field"><label class="visually-hidden" for="sort" data-i18n="filter.sort"></label><select id="sort" name="sort" class="input" form="filters"></select></div>
+        </div>
+        <div id="activeFilters" class="active-filters"></div>
+        <p id="count" class="result-count" aria-live="polite"></p>
+        <div id="list" class="card-grid is-varied" style="margin-top: 20px"></div>
+        <div id="empty" class="empty" hidden>
+          <h2 data-i18n="filter.emptyTitle"></h2>
+          <p data-i18n="filter.emptyText"></p>
+          <button type="button" id="reset2" class="btn" data-i18n="filter.reset"></button>
+        </div>
       </div>
-      <fieldset class="filter-cats">
-        <legend data-i18n="filter.category"></legend>
-        <div id="catChips" class="chip-row"></div>
-      </fieldset>
-      <div class="filter-selects">
-        <div class="field"><label for="cuisine" data-i18n="filter.cuisine"></label><select id="cuisine" name="cuisine" class="input"></select></div>
-        <div class="field"><label for="maxTime" data-i18n="filter.time"></label><select id="maxTime" name="maxTime" class="input"></select></div>
-        <div class="field"><label for="level" data-i18n="filter.level"></label><select id="level" name="level" class="input"></select></div>
-        <div class="field"><label for="sort" data-i18n="filter.sort"></label><select id="sort" name="sort" class="input"></select></div>
-        <label class="check"><input type="checkbox" id="veg" name="veg"> <span data-i18n="filter.veg"></span></label>
-      </div>
-    </form>
-    <div class="list-head">
-      <p id="count" class="result-count" aria-live="polite"></p>
-      <button type="button" id="reset" class="btn btn-ghost btn-small" data-i18n="filter.reset"></button>
-    </div>
-    <div id="list" class="card-grid"></div>
-    <div id="empty" class="empty" hidden>
-      <h2 data-i18n="filter.emptyTitle"></h2>
-      <p data-i18n="filter.emptyText"></p>
-      <button type="button" id="reset2" class="btn" data-i18n="filter.reset"></button>
     </div>
   </main>
   <footer id="site-footer" class="site-footer"></footer>

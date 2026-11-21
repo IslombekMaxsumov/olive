@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recipe book</title>
+  <title>OLIVE</title>
   <meta name="description" content="">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f5f5ef">
+  <link rel="icon" href="assets/brand/olive-favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@700;800&display=swap">
   <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
   <script>
     window.APP_NS = "recipes";
@@ -19,7 +23,10 @@
   <script defer src="js/core.js"></script>
   <script defer src="js/lang.js"></script>
   <script defer src="js/data.js"></script>
+  <script defer src="js/photos.js"></script>
+  <script defer src="js/format.js"></script>
   <script defer src="js/store.js"></script>
+  <script defer src="js/logo.js"></script>
   <script defer src="js/layout.js"></script>
   <script defer src="js/pages/favorites.js"></script>
 </head>
@@ -28,9 +35,10 @@
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1" class="container page">
-    <h1 data-i18n="page.favorites"></h1>
-    <p id="favCount" class="result-count" aria-live="polite"></p>
-    <div id="favList" class="card-grid"></div>
+    <p class="annot" data-i18n="favs.annot"></p>
+    <h1 class="page-title" data-i18n="page.favorites"></h1>
+    <p id="favCount" class="result-count" aria-live="polite" style="margin-top: 12px"></p>
+    <div id="favList" class="card-grid" style="margin-top: 28px"></div>
     <div id="favEmpty" class="empty" hidden>
       <h2 data-i18n="favs.emptyTitle"></h2>
       <p data-i18n="favs.emptyText"></p>
