@@ -29,7 +29,7 @@ A quiet, typeset cookbook rather than a big editorial site.
 
 ## Photos
 All 29 photos are from Pexels (Pexels License: free to use, no attribution required), picked by eye to look like one set: about a 45° angle, soft daylight, light surfaces. `node tools/pexels.mjs` downloads them in 3 widths (500, 960, 1600 px) and writes `assets/photos/manifest.json` (photographer, source page, crop position). Each recipe page still credits the photographer under the photo.
-- **Closest matches, not perfect:** tagine (a purple tagine by a pool), ramen (dark background), Greek salad and ceviche (shot from almost straight above), omelette (served with salad), pancakes (no butter or syrup). Own photos from one shoot would still be best (`../olive-photo-brief.md`).
+- **Closest matches, not perfect:** tagine (a purple tagine by a pool), ramen (dark background), Greek salad and ceviche (shot from almost straight above), omelette (served with salad). Own photos from one shoot would still be best (`../olive-photo-brief.md`).
 
 `tools/photos.mjs` builds `js/photos.js` (sizes, alt text in 3 languages, credits) from the manifest.
 
