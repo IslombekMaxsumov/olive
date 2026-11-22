@@ -10,11 +10,11 @@ const head = (page, script) => `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OLIVE</title>
   <meta name="description" content="">
-  <meta name="theme-color" content="#f5f5ef">
+  <meta name="theme-color" content="#f5f1e8">
   <link rel="icon" href="assets/brand/olive-favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
   <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
   <script>
     window.APP_NS = "recipes";
@@ -51,7 +51,7 @@ const PAGES = {
   <main id="main" tabindex="-1" class="container page home-page">
     <section class="hero" aria-labelledby="homeTitle">
       <div class="hero-text">
-        <p class="annot hero-annot" id="heroAnnot"></p>
+        <p class="label" id="heroAnnot"></p>
         <h1 id="homeTitle"></h1>
         <p class="hero-intro" data-i18n="home.intro"></p>
         <div class="pantry">
@@ -66,7 +66,7 @@ const PAGES = {
             <p id="pantryError" class="field-error" aria-live="polite"></p>
           </form>
           <div class="quick-ings">
-            <p class="annot" id="quickLabel" data-i18n="home.quick"></p>
+            <p class="label" id="quickLabel" data-i18n="home.quick"></p>
             <div id="quickIngs" class="chip-row" role="group" aria-labelledby="quickLabel"></div>
           </div>
           <div id="pantryChips" class="pantry-chips" aria-live="polite"></div>
@@ -83,19 +83,19 @@ const PAGES = {
     <div id="ideas">
       <section class="section" aria-labelledby="featTitle"><div id="feature" class="feature"></div></section>
       <section class="section" aria-labelledby="worldTitle">
-        <div class="section-head"><div><p class="annot" data-i18n="home.worldAnnot"></p><h2 id="worldTitle" data-i18n="home.world"></h2></div><a class="more-link" href="recipes.html" data-i18n="home.allRecipes"></a></div>
+        <div class="section-head"><div><p class="label" data-i18n="home.worldAnnot"></p><h2 id="worldTitle" data-i18n="home.world"></h2></div><a class="more-link" href="recipes.html" data-i18n="home.allRecipes"></a></div>
         <div id="regions" class="regions"></div>
       </section>
       <section class="section" aria-labelledby="classicsTitle">
-        <div class="section-head"><div><p class="annot" data-i18n="home.classicsAnnot"></p><h2 id="classicsTitle" data-i18n="home.classics"></h2></div><a class="more-link" href="recipes.html?cuisine=central-asia" data-i18n="home.allUzbek"></a></div>
+        <div class="section-head"><div><p class="label" data-i18n="home.classicsAnnot"></p><h2 id="classicsTitle" data-i18n="home.classics"></h2></div><a class="more-link" href="recipes.html?cuisine=central-asia" data-i18n="home.allUzbek"></a></div>
         <div id="classicList" class="classics"></div>
       </section>
       <section class="section" aria-labelledby="quickTitle">
-        <div class="section-head"><div><p class="annot" data-i18n="home.quickAnnot"></p><h2 id="quickTitle" data-i18n="home.quickIdeas"></h2></div><a class="more-link" href="recipes.html?maxTime=30" data-i18n="home.allQuick"></a></div>
+        <div class="section-head"><div><p class="label" data-i18n="home.quickAnnot"></p><h2 id="quickTitle" data-i18n="home.quickIdeas"></h2></div><a class="more-link" href="recipes.html?maxTime=30" data-i18n="home.allQuick"></a></div>
         <div id="quickList" class="quick-index"></div>
       </section>
       <section class="section" aria-labelledby="colTitle">
-        <div class="section-head"><div><p class="annot" data-i18n="home.colAnnot"></p><h2 id="colTitle" data-i18n="home.collections"></h2></div></div>
+        <div class="section-head"><div><p class="label" data-i18n="home.colAnnot"></p><h2 id="colTitle" data-i18n="home.collections"></h2></div></div>
         <div id="collections" class="collections"></div>
       </section>
     </div>
@@ -103,7 +103,7 @@ const PAGES = {
 
   recipes: ["recipes", "recipes", `
   <main id="main" tabindex="-1" class="container page">
-    <p class="annot" id="listAnnot"></p>
+    <p class="label" id="listAnnot"></p>
     <h1 class="page-title" data-i18n="page.recipes"></h1>
     <div class="list-layout">
       <form id="filters" class="filters" novalidate aria-labelledby="filterTitle">
@@ -128,7 +128,7 @@ const PAGES = {
         </div>
         <div id="activeFilters" class="active-filters"></div>
         <p id="count" class="result-count" aria-live="polite"></p>
-        <div id="list" class="card-grid is-varied" style="margin-top: 20px"></div>
+        <div id="list" class="card-grid"></div>
         <div id="empty" class="empty" hidden>
           <h2 data-i18n="filter.emptyTitle"></h2>
           <p data-i18n="filter.emptyText"></p>
@@ -147,7 +147,7 @@ const PAGES = {
 
   plan: ["plan", "plan", `
   <main id="main" tabindex="-1" class="container page">
-    <p class="annot" data-i18n="plan.annot"></p>
+    <p class="label" data-i18n="plan.annot"></p>
     <h1 class="page-title" data-i18n="page.plan"></h1>
     <p class="page-intro" data-i18n="plan.intro"></p>
     <div class="plan-actions">
@@ -162,7 +162,7 @@ const PAGES = {
 
   favorites: ["favorites", "favorites", `
   <main id="main" tabindex="-1" class="container page">
-    <p class="annot" data-i18n="favs.annot"></p>
+    <p class="label" data-i18n="favs.annot"></p>
     <h1 class="page-title" data-i18n="page.favorites"></h1>
     <p id="favCount" class="result-count" aria-live="polite" style="margin-top: 12px"></p>
     <div id="favList" class="card-grid" style="margin-top: 28px"></div>
@@ -175,7 +175,7 @@ const PAGES = {
 
   shopping: ["shopping", "shopping", `
   <main id="main" tabindex="-1" class="container page shopping-page">
-    <p class="annot" data-i18n="shop.annot"></p>
+    <p class="label" data-i18n="shop.annot"></p>
     <h1 class="page-title" data-i18n="page.shopping"></h1>
     <div class="shop-layout">
       <aside class="shop-side" aria-labelledby="shopSideTitle">

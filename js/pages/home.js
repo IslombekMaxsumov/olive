@@ -102,7 +102,7 @@
     return el("article", { class: "match" },
       el("a", { class: "photo-link", href: "recipe.html?id=" + m.r.id, tabindex: "-1", "aria-hidden": "true" }, photo(m.r, { sizes: "140px" })),
       el("div", null,
-        el("p", { class: "annot", text: Site.country(m.r) + " · " + Site.minutes(m.r.time) }),
+        el("p", { class: "label", text: Site.country(m.r) + " · " + Site.minutes(m.r.time) }),
         el("h3", null, el("a", { href: "recipe.html?id=" + m.r.id, text: recipeName(m.r) })),
         el("div", { class: "match-dots", "aria-hidden": "true" }, m.need.map((id) => el("span", { class: m.got.includes(id) ? "is-have" : "", title: ingName(id) }))),
         el("p", { class: "match-score" + (all ? " is-complete" : ""), text: all ? t("home.haveAll") : t("home.haveSome", { have: m.got.length, total: m.need.length }) }),
@@ -117,17 +117,15 @@
 
   /* ---------- magazine part ---------- */
   function renderMagazine() {
-    // hero: headline with a butter marker on one word, a big leaf-cropped photo and a small round one
+    // hero: the headline with two words in italic, and one photograph
     const h = t("home.title", { mark: "\u0000" }).split("\u0000");
-    $("homeTitle").replaceChildren(h[0], el("span", { class: "mark", text: t("home.titleMark") }), h[1] || "");
+    $("homeTitle").replaceChildren(h[0], el("em", { text: t("home.titleMark") }), h[1] || "");
     $("heroAnnot").textContent = t("home.annot", { count: RECIPES.length, regions: DATA.REGIONS.length });
     const cover = DATA.recipe("plov");
-    const side = DATA.recipe("padthai");
     $("heroArt").replaceChildren(
-      photo(cover, { cls: "photo-main photo-leaf", eager: true, sizes: "(min-width: 960px) 45vw, 100vw" }),
-      photo(side, { cls: "photo-side photo-round", sizes: "200px" }),
+      el("a", { class: "photo-link", href: "recipe.html?id=" + cover.id, tabindex: "-1", "aria-hidden": "true" }, photo(cover, { eager: true, sizes: "(min-width: 900px) 440px, 100vw" })),
       el("a", { class: "hero-caption", href: "recipe.html?id=" + cover.id },
-        el("span", { class: "annot", text: t("home.onCover") }), el("strong", { text: recipeName(cover) + " ↗" })));
+        el("span", { text: t("home.onCover") }), el("strong", { text: recipeName(cover) })));
 
     // featured recipe: changes every day, from the dishes that aren't on the cover
     const pool = RECIPES.filter((r) => r.id !== "plov" && window.PHOTOS && PHOTOS[r.id]);
@@ -135,40 +133,36 @@
     $("feature").replaceChildren(
       el("a", { class: "photo-link", href: "recipe.html?id=" + f.id, tabindex: "-1", "aria-hidden": "true" }, photo(f, { sizes: "(min-width: 900px) 58vw, 100vw" })),
       el("div", null,
-        el("p", { class: "annot", text: t("home.featured") + " · " + Site.regionName(f.region) }),
+        el("p", { class: "label", text: t("home.featured") + " · " + Site.regionName(f.region) }),
         el("h2", { id: "featTitle", text: recipeName(f) }),
         el("p", { class: "lead", text: f.about[lang()] }),
         Site.meta(f),
-        el("a", { class: "btn", href: "recipe.html?id=" + f.id }, el("span", { text: t("home.cookThis") }), icon("arrow", 18))));
+        el("a", { class: "btn btn-ghost", href: "recipe.html?id=" + f.id, text: t("home.cookThis") })));
 
-    // around the world: one tile per region, with a dish from it
+    // around the world: a typeset index of the regions and their dishes
     $("regions").replaceChildren(...DATA.REGIONS.map((id) => {
       const list = RECIPES.filter((r) => r.region === id);
-      const pic = list.find((r) => PHOTOS[r.id] && r.id !== "plov") || list[0];
       return el("a", { class: "region", href: "recipes.html?cuisine=" + id },
-        photo(pic, { sizes: "(min-width: 1100px) 10vw, 200px" }),
         el("strong", { text: Site.regionName(id) }),
-        el("span", { class: "annot", text: t("home.regionCount", { count: list.length, dish: recipeName(pic) }) }));
+        el("span", { class: "count", text: t("filter.count", { count: list.length }) }),
+        el("span", { class: "dishes", text: list.slice(0, 3).map(recipeName).join(", ") + (list.length > 3 ? "…" : "") }));
     }));
 
-    $("classicList").replaceChildren(...["manti", "plov", "samsa", "lagman", "dimlama"].map((id, i) =>
-      Site.card(DATA.recipe(id), { about: i === 0, sizes: i === 0 ? "(min-width: 860px) 40vw, 100vw" : "(min-width: 860px) 25vw, 100vw" })));
+    $("classicList").replaceChildren(...["manti", "samsa", "lagman", "dimlama"].map((id) =>
+      Site.card(DATA.recipe(id), { sizes: "(min-width: 1120px) 270px, (min-width: 600px) 45vw, 100vw" })));
 
     $("quickList").replaceChildren(...RECIPES.filter((r) => r.time <= 35).sort((a, b) => a.time - b.time).map((r, i) =>
       el("a", { class: "quick-row", href: "recipe.html?id=" + r.id },
         el("span", { class: "q-num", text: String(i + 1).padStart(2, "0") }),
         el("span", { class: "q-title", text: recipeName(r) }),
         el("span", { class: "q-meta", text: Site.minutes(r.time) }),
-        photo(r, { cls: "photo-round", sizes: "64px" }))));
+        photo(r, { sizes: "48px" }))));
 
     $("collections").replaceChildren(...DATA.COLLECTIONS.map((c) =>
       el("a", { class: "collection", href: "recipes.html?collection=" + c.id },
-        el("div", null,
-          el("p", { class: "annot", text: t("filter.count", { count: c.recipes.length }) }),
-          el("h3", { text: t("col." + c.id) }),
-          el("p", { text: t("col." + c.id + ".text") })),
-        el("div", { class: "collection-thumbs", "aria-hidden": "true" },
-          c.recipes.filter((id) => PHOTOS[id]).slice(0, 4).map((id) => photo(DATA.recipe(id), { cls: "photo-round", sizes: "64px" }))))));
+        el("p", { class: "label", text: t("filter.count", { count: c.recipes.length }) }),
+        el("h3", { text: t("col." + c.id) }),
+        el("p", { text: t("col." + c.id + ".text") }))));
   }
 
   function render() {

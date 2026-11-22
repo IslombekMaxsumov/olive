@@ -12,11 +12,14 @@ Site #6 of my 10-websites course project: 29 recipes from Uzbekistan and nine mo
 | `favorites.html` | Saved recipes with your notes and a Remove button (with Undo) |
 | `shopping.html` | Grouped by shop aisle; the same ingredient from several recipes is added up (2 onions + 1 onion = 3 onions; 1 tbsp + 1 tsp cumin = 4 tsp); your own items; copy as text, print, remove bought, clear with Undo |
 
-## Design
-- Palette from the OLIVE brief (olive, tomato, butter on soft greens). A few values were changed to pass WCAG AA; the original value is noted next to each one in `css/base.css`.
-- Fonts: Manrope (headlines), Golos Text (text), IBM Plex Mono (amounts, numbers and small annotations). All have Cyrillic.
-- Logo: the O is a sliced stuffed olive (green oval, red pimento as the counter), then "LIVE" in Manrope ExtraBold converted to outlines. `assets/brand`: logo (light, dark, one colour), symbol (light, dark), favicon. Keep free space of at least the width of the olive around the logo. In the site the logo is drawn inline (`js/logo.js`) so it follows the theme.
-- Signature details: the butter "marker" behind a key word, leaf-shaped photo crops, tomato-red step numbers, small mono annotations ("↘ East Asia · 60 min").
+## Design (second direction, 2026-11-22)
+A quiet, typeset cookbook rather than a big editorial site.
+- Palette from the brief: warm paper #F5F1E8, deep charcoal olive #292B23, muted sage #777B60, terracotta #B66E4E, stone #D8CDBB. Sage and terracotta are too light for small text, so small text uses deeper versions (noted in `css/base.css`); buttons are charcoal with paper text. A dark theme uses the same colours on charcoal.
+- Fonts: EB Garamond (headings and recipe titles, weights 400–500) and Commissioner (interface). Both have Cyrillic. Page headings 32–44px, sections 24–28px, body 15px, labels 11px.
+- Proportions: content is centred at 1120px, recipe text sits in a 760px column, the header is 60px.
+- Thin stone separators instead of boxes and shadows; nearly square corners; no gradients or decorative shapes. Terracotta only for step numbers and small highlights.
+- Photos: one proportion per place (4:3 cards, 3:2 recipe photos) and the same gentle warm grading on every photo (`.photo img` in `css/site.css`). This makes the current photos calmer, but they still come from different photographers and angles. `../olive-photo-brief.md` describes one consistent 45° "photo session" for all 29 dishes; new images go in `assets/photos/new/<id>.jpg` and `node tools/import-photos.mjs --generated` adds them, with a credit that says they are AI-generated.
+- Logo: the O is a sliced stuffed olive (sage and terracotta), "LIVE" is EB Garamond Medium, converted to outlines (`assets/brand`, inline in `js/logo.js`).
 
 ## Recipes
 - 13 Uzbek dishes and 16 from Eastern Europe, Western Europe, the Mediterranean, East Asia, Southeast Asia, South Asia, the Middle East, North Africa and Latin America (`js/data.js`).

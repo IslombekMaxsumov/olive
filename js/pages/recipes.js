@@ -104,8 +104,6 @@
     $("filtersToggle").replaceChildren(icon("sliders", 18), el("span", { text: active.length ? t("filter.toggleN", { count: active.length }) : t("filter.toggle") }));
   }
 
-  // A rhythm for the grid: the first card and every 7th are wide, every 4th is tall.
-  const variant = (i) => (i % 7 === 0 ? "is-wide" : i % 7 === 3 ? "is-tall" : "");
 
   let fade = 0;
   function renderList() {
@@ -113,7 +111,7 @@
     const grid = $("list");
     const draw = () => {
       $("count").textContent = t("filter.count", { count: list.length });
-      grid.replaceChildren(...list.map((r, i) => Site.card(r, { cls: variant(i), sizes: variant(i) === "is-wide" ? "(min-width: 1024px) 60vw, 100vw" : "(min-width: 1024px) 30vw, (min-width: 720px) 45vw, 100vw" })));
+      grid.replaceChildren(...list.map((r) => Site.card(r, { sizes: "(min-width: 1120px) 270px, (min-width: 600px) 45vw, 100vw" })));
       grid.hidden = list.length === 0;
       $("empty").hidden = list.length > 0;
       // show which searched ingredient matched (helps "search by ingredient")

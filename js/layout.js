@@ -109,6 +109,8 @@
     });
     const fig = el("figure", { class: cls }, img);
     if (!opts.credit) return fig;
+    // generated or own images: say so plainly; Commons photos: photographer, source and licence
+    if (p.generated || !p.source) return [fig, el("p", { class: "photo-credit", text: p.generated ? t("photo.generated") : p.by })];
     return [fig, el("p", { class: "photo-credit" },
       t("photo.credit", { by: p.by }) + " · ",
       el("a", { href: p.source, rel: "noopener", text: "Wikimedia Commons" }), " · ",
@@ -142,11 +144,11 @@
       kcal && el("li", null, icon("flame", 14), el("span", { text: t("recipe.kcal", { n: r.kcal }) })),
       r.veg && el("li", { class: "is-veg" }, icon("leaf", 14), el("span", { text: t("recipe.veg") })));
   }
-  // opts: { extra (element under the text), cls ("is-wide"...), sizes, about }
+  // opts: { extra (element under the text), cls, sizes, about, meta }
   function card(r, opts = {}) {
     return el("article", { class: "recipe-card" + (opts.cls ? " " + opts.cls : ""), "data-cat": r.cat },
       el("div", { class: "card-photo", style: "position:relative" }, photo(r, { sizes: opts.sizes || "(min-width: 960px) 25vw, (min-width: 720px) 45vw, 100vw" }), favButton(r, true)),
-      el("p", { class: "annot card-annot", text: country(r) + " · " + minutes(r.time) }),
+      el("p", { class: "label", text: country(r) }),
       el("h3", { class: "card-title" }, el("a", { href: "recipe.html?id=" + r.id, text: recipeName(r) })),
       opts.about !== false && el("p", { class: "card-about", text: r.about[lang()] }),
       opts.meta !== false && meta(r, { kcal: false }),

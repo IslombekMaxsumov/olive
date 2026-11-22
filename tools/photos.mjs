@@ -32,6 +32,8 @@ const ALT = {
   butterchicken: ["Butter chicken in an orange creamy sauce in a bowl", "Курица в оранжевом сливочном соусе в миске", "Kosada to'q sariq qaymoqli sousdagi tovuq"],
   falafel: ["A plate of falafel with hummus and salad", "Тарелка фалафеля с хумусом и салатом", "Xumus va salat bilan bir likopcha falafel"],
   shakshuka: ["Shakshuka in a black pan: eggs in tomato and pepper sauce with herbs", "Шакшука в чёрной сковороде: яйца в соусе из помидоров и перца с зеленью", "Qora tovadagi shakshuka: ko'katli pomidor va qalampir sousidagi tuxumlar"],
+  qatlama: ["Qatlama: a round, crisp, many-layered flatbread with a small bowl of honey", "Катлама: круглая хрустящая слоёная лепёшка с пиалой мёда", "Qatlama: bir piyola asal bilan dumaloq, qarsildoq, ko'p qatlamli non"],
+  shirguruch: ["Shirguruch: creamy rice cooked in milk with a piece of butter on top", "Ширгуруч: нежный рис на молоке с кусочком сливочного масла", "Shirguruch: ustiga sariyog' qo'yilgan sutli mayin guruch"],
   ratatouille: ["Ratatouille: stewed aubergine, courgette, peppers and tomato on a plate", "Рататуй: тушёные баклажаны, кабачки, перец и помидоры на тарелке", "Ratatuy: likopchada dimlangan baqlajon, qovoqcha, qalampir va pomidor"],
 };
 const clean = (s) => String(s || "").replace(/\s*\(talk\)|\s*\(\s*\)/g, "").replace(/\s+/g, " ").trim();
@@ -44,6 +46,7 @@ for (const [id, m] of Object.entries(manifest)) {
     alt: { en: ALT[id][0], ru: ALT[id][1], uz: ALT[id][2] },
     by: clean(m.photographer).slice(0, 90),
     license: m.license, licenseUrl: m.licenseUrl, source: m.sourcePage,
+    generated: Boolean(m.generated),
   };
 }
 writeFileSync(new URL("../js/photos.js", import.meta.url), `/* Photos of the dishes (Wikimedia Commons), made by tools/photos.mjs from

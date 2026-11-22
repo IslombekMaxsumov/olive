@@ -27,7 +27,8 @@ window.PHOTOS = {
   "by": "BeshevI",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:14T_20240407_19.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:14T_20240407_19.jpg",
+  "generated": false
  },
  "lagman": {
   "sizes": [
@@ -52,7 +53,8 @@ window.PHOTOS = {
   "by": "赤猫法師",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Uzbek_lagman.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Uzbek_lagman.jpg",
+  "generated": false
  },
  "manti": {
   "sizes": [
@@ -77,7 +79,8 @@ window.PHOTOS = {
   "by": "Ji-Elle",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Ouzb%C3%A9kistan-Ravioli_(1).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ouzb%C3%A9kistan-Ravioli_(1).jpg",
+  "generated": false
  },
  "samsa": {
   "sizes": [
@@ -102,7 +105,8 @@ window.PHOTOS = {
   "by": "Ji-Elle",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Ouzb%C3%A9kistan-Samsas.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ouzb%C3%A9kistan-Samsas.jpg",
+  "generated": false
  },
  "shurpa": {
   "sizes": [
@@ -127,7 +131,8 @@ window.PHOTOS = {
   "by": "Nikolai Bulykin",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4,_%D1%81%D0%BE%D1%80%D0%BF%D0%B0_%D0%B2_%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%BC_%D0%BA%D0%B0%D1%84%D0%B5.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4,_%D1%81%D0%BE%D1%80%D0%BF%D0%B0_%D0%B2_%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%BC_%D0%BA%D0%B0%D1%84%D0%B5.jpg",
+  "generated": false
  },
  "mastava": {
   "sizes": [
@@ -152,7 +157,8 @@ window.PHOTOS = {
   "by": "Olexdj",
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%83%D0%BF_%D0%9C%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%B0.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%83%D0%BF_%D0%9C%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%B0.jpg",
+  "generated": false
  },
  "dimlama": {
   "sizes": [
@@ -177,7 +183,8 @@ window.PHOTOS = {
   "by": "EugSan",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%94%D1%83%D0%BC%D0%BB%D1%8F%D0%BC%D0%B0.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%94%D1%83%D0%BC%D0%BB%D1%8F%D0%BC%D0%B0.jpg",
+  "generated": false
  },
  "chuchvara": {
   "sizes": [
@@ -194,7 +201,8 @@ window.PHOTOS = {
   "by": "Elena777 ; reprocessed by Off-shell (cropped, removed watermarks)",
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Chuchvara.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Chuchvara.jpg",
+  "generated": false
  },
  "non": {
   "sizes": [
@@ -219,7 +227,8 @@ window.PHOTOS = {
   "by": "Benjamin Goetzinger",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Uzbek_bread,_obi_non,_lepyoshka.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Uzbek_bread,_obi_non,_lepyoshka.jpg",
+  "generated": false
  },
  "moshkichiri": {
   "sizes": [
@@ -244,7 +253,8 @@ window.PHOTOS = {
   "by": "Behruznurullayevv",
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:Moshkichra.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Moshkichra.jpg",
+  "generated": false
  },
  "achichuk": {
   "sizes": [
@@ -269,7 +279,8 @@ window.PHOTOS = {
   "by": "Shuhrataxmedov",
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:%27Achchiq-chuchuk%27_-_uzbek_salad.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:%27Achchiq-chuchuk%27_-_uzbek_salad.jpg",
+  "generated": false
  },
  "borscht": {
   "sizes": [
@@ -294,7 +305,8 @@ window.PHOTOS = {
   "by": "liz west from Boxborough, MA",
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Borscht_served.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Borscht_served.jpg",
+  "generated": false
  },
  "blini": {
   "sizes": [
@@ -319,7 +331,8 @@ window.PHOTOS = {
   "by": "Ninaras",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Russian_blini.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Russian_blini.jpg",
+  "generated": false
  },
  "syrniki": {
   "sizes": [
@@ -344,7 +357,8 @@ window.PHOTOS = {
   "by": "The original uploader was Turzh at Ukrainian Wikipedia.",
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B8%D1%80%D0%BD%D0%B8%D0%BA%D0%B8.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B8%D1%80%D0%BD%D0%B8%D0%BA%D0%B8.JPG",
+  "generated": false
  },
  "omelette": {
   "sizes": [
@@ -365,7 +379,8 @@ window.PHOTOS = {
   "by": "Renee Comet (photographer)",
   "license": "Public domain",
   "licenseUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:FoodOmelete.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:FoodOmelete.jpg",
+  "generated": false
  },
  "greek": {
   "sizes": [
@@ -390,7 +405,8 @@ window.PHOTOS = {
   "by": "Scudsvlad",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Horiatiki_salad.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Horiatiki_salad.jpg",
+  "generated": false
  },
  "pasta": {
   "sizes": [
@@ -415,7 +431,8 @@ window.PHOTOS = {
   "by": "Benreis",
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Spaghetti_al_Pomodoro.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Spaghetti_al_Pomodoro.JPG",
+  "generated": false
  },
  "chicken": {
   "sizes": [
@@ -440,7 +457,8 @@ window.PHOTOS = {
   "by": "Ceeseven",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Roast_Chicken_with_Potato_Wedges.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Roast_Chicken_with_Potato_Wedges.jpg",
+  "generated": false
  },
  "katsu": {
   "sizes": [
@@ -465,7 +483,8 @@ window.PHOTOS = {
   "by": "ノボホショコロトソ",
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Japanese_Katsu_Curry_01.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Japanese_Katsu_Curry_01.jpg",
+  "generated": false
  },
  "bibimbap": {
   "sizes": [
@@ -490,7 +509,8 @@ window.PHOTOS = {
   "by": "Guilhem Vellut from Paris, France",
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Dolsot_Bibimbap,_Le_Manna,_Paris,_February_2016_003.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Dolsot_Bibimbap,_Le_Manna,_Paris,_February_2016_003.jpg",
+  "generated": false
  },
  "padthai": {
   "sizes": [
@@ -515,7 +535,8 @@ window.PHOTOS = {
   "by": "Takeaway",
   "license": "CC BY-SA 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Phat_Thai_kung_Chang_Khien_street_stall.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Phat_Thai_kung_Chang_Khien_street_stall.jpg",
+  "generated": false
  },
  "tinga": {
   "sizes": [
@@ -540,7 +561,8 @@ window.PHOTOS = {
   "by": "Axochilt",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Tinga_de_pollo.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Tinga_de_pollo.JPG",
+  "generated": false
  },
  "butterchicken": {
   "sizes": [
@@ -565,7 +587,8 @@ window.PHOTOS = {
   "by": "stu_spivack",
   "license": "CC BY-SA 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Chicken_makhani.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Chicken_makhani.jpg",
+  "generated": false
  },
  "falafel": {
   "sizes": [
@@ -590,7 +613,8 @@ window.PHOTOS = {
   "by": "やましこ",
   "license": "CC BY-SA 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Falafel_(49728839526).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Falafel_(49728839526).jpg",
+  "generated": false
  },
  "shakshuka": {
   "sizes": [
@@ -615,7 +639,8 @@ window.PHOTOS = {
   "by": "Jarosław Ceborski jarson",
   "license": "CC0",
   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:Shakshuka_(Unsplash).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Shakshuka_(Unsplash).jpg",
+  "generated": false
  },
  "ratatouille": {
   "sizes": [
@@ -640,7 +665,8 @@ window.PHOTOS = {
   "by": "Arnaud 25",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Ratatouille_001.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ratatouille_001.jpg",
+  "generated": false
  },
  "sharlotka": {
   "sizes": [
@@ -665,6 +691,7 @@ window.PHOTOS = {
   "by": "Turzh",
   "license": "CC BY-SA 3.0",
   "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "source": "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%B0%D1%80%D0%BB%D0%BE%D1%82%D0%BA%D0%B0.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:%D0%A8%D0%B0%D1%80%D0%BB%D0%BE%D1%82%D0%BA%D0%B0.JPG",
+  "generated": false
  }
 };

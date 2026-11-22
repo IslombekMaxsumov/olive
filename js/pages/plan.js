@@ -46,7 +46,7 @@
       return el("section", { class: "day" + (d === todayKey ? " is-today" : "") + (d === shown ? " is-shown" : ""), "aria-labelledby": "day-" + d },
         el("div", { class: "day-head" },
           el("h2", { id: "day-" + d, text: t("day." + d) }),
-          d === todayKey && el("span", { class: "annot", text: t("plan.today") })),
+          d === todayKey && el("span", { class: "label", text: t("plan.today") })),
         Store.MEALS.map((m) => meal(d, m, DATA.recipe(day[m]) ? day[m] : "")),
         el("p", { class: "day-kcal", text: kcal ? t("plan.kcal", { n: kcal }) : t("plan.empty") }));
     }));
