@@ -106,14 +106,15 @@
       sizes: opts.sizes || "(min-width: 960px) 33vw, 100vw",
       alt: p.alt[lang()], loading: opts.eager ? "eager" : "lazy", decoding: "async",
       fetchpriority: opts.eager ? "high" : null,
+      style: p.pos ? `object-position: ${p.pos}` : null, // portrait photos: keep the food in the frame
     });
     const fig = el("figure", { class: cls }, img);
     if (!opts.credit) return fig;
-    // generated or own images: say so plainly; Commons photos: photographer, source and licence
+    // generated or own images: say so plainly; stock photos: photographer, source and licence
     if (p.generated || !p.source) return [fig, el("p", { class: "photo-credit", text: p.generated ? t("photo.generated") : p.by })];
     return [fig, el("p", { class: "photo-credit" },
       t("photo.credit", { by: p.by }) + " · ",
-      el("a", { href: p.source, rel: "noopener", text: "Wikimedia Commons" }), " · ",
+      el("a", { href: p.source, rel: "noopener", text: p.site }), " · ",
       p.licenseUrl ? el("a", { href: p.licenseUrl, rel: "noopener license", text: p.license }) : p.license)];
   }
 

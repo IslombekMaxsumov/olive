@@ -18,7 +18,7 @@ A quiet, typeset cookbook rather than a big editorial site.
 - Fonts: EB Garamond (headings and recipe titles, weights 400–500) and Commissioner (interface). Both have Cyrillic. Page headings 32–44px, sections 24–28px, body 15px, labels 11px.
 - Proportions: content is centred at 1120px, recipe text sits in a 760px column, the header is 60px.
 - Thin stone separators instead of boxes and shadows; nearly square corners; no gradients or decorative shapes. Terracotta only for step numbers and small highlights.
-- Photos: one proportion per place (4:3 cards, 3:2 recipe photos) and the same gentle warm grading on every photo (`.photo img` in `css/site.css`). This makes the current photos calmer, but they still come from different photographers and angles. `../olive-photo-brief.md` describes one consistent 45° "photo session" for all 29 dishes; new images go in `assets/photos/new/<id>.jpg` and `node tools/import-photos.mjs --generated` adds them, with a credit that says they are AI-generated.
+- Photos: one proportion per place (4:3 cards, 3:2 recipe photos) and the same gentle warm grading on every photo (`.photo img` in `css/site.css`). `../olive-photo-brief.md` describes one consistent 45° "photo session"; replacement images go in `assets/photos/new/<id>.jpg` and `node tools/import-photos.mjs` adds them (`--generated` labels AI images as such).
 - Logo: the O is a sliced stuffed olive (sage and terracotta), "LIVE" is EB Garamond Medium, converted to outlines (`assets/brand`, inline in `js/logo.js`).
 
 ## Recipes
@@ -28,10 +28,8 @@ A quiet, typeset cookbook rather than a big editorial site.
 - Scaling: amounts are rounded to what a cook can measure (½ onion, whole garlic cloves, ¼ spoons); eggs, tortillas and pita stay whole; with a big change in servings a note says to add salt and spices gradually.
 
 ## Photos
-All photos are from Wikimedia Commons, under the licences listed in `assets/photos/manifest.json` (source page, photographer, licence, attribution). Each recipe page shows the credit and a licence link under the photo, which the CC BY and CC BY-SA licences require. Each photo was checked by eye to show the right dish, and is stored in 3 widths (500, 960, 1920 px) for responsive loading.
-- **No suitable photo found:** qatlama (only Turkish katmer and Balkan pastries), shirguruch (only other countries' rice puddings). These recipes show a typographic plate instead. Own photos would be best.
-- **Weaker photos:** chuchvara (the only real one is 600 px wide), lagman (a soupier style), tinga (the filling, without tortillas), katsu curry (the cutlet may be pork).
-- The omelette recipe was changed to a classic folded omelette so it matches the only accurate photo.
+All 29 photos are from Pexels (Pexels License: free to use, no attribution required), picked by eye to look like one set: about a 45° angle, soft daylight, light surfaces. `node tools/pexels.mjs` downloads them in 3 widths (500, 960, 1600 px) and writes `assets/photos/manifest.json` (photographer, source page, crop position). Each recipe page still credits the photographer under the photo.
+- **Closest matches, not perfect:** tagine (a purple tagine by a pool), ramen (dark background), Greek salad and ceviche (shot from almost straight above), omelette (served with salad), pancakes (no butter or syrup). Own photos from one shoot would still be best (`../olive-photo-brief.md`).
 
 `tools/photos.mjs` builds `js/photos.js` (sizes, alt text in 3 languages, credits) from the manifest.
 
