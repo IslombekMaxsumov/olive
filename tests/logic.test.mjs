@@ -75,30 +75,32 @@ test("eggs stay whole when scaling", () => {
 
 test("servings calculator scales every ingredient linearly", () => {
   const { DATA, Store } = load();
-  const plov = DATA.recipe("plov"); // written for 6
-  const for3 = Store.scaled(plov, 3);
-  const rice = for3.find((x) => x.ing === "rice");
-  assert.equal(rice.amount, 300);
-  const cumin = for3.find((x) => x.ing === "cumin"); // 1 tbsp → 1.5 tsp (base unit)
-  assert.equal(cumin.unit, "tsp");
-  assert.equal(cumin.amount, 1.5);
-  const water = Store.scaled(plov, 12).find((x) => x.ing === "water");
-  assert.equal(water.amount, 1800);
+  const chana = DATA.recipe("chana"); // written for 4
+  const for2 = Store.scaled(chana, 2);
+  assert.equal(for2.find((x) => x.ing === "chickpeas").amount, 125);
+  assert.equal(for2.find((x) => x.ing === "coriander").amount, 1);
+  const ginger = Store.scaled(DATA.recipe("pho"), 2).find((x) => x.ing === "ginger"); // 3 tbsp for 4 → 1.5 tbsp = 4.5 tsp (base unit)
+  assert.equal(ginger.unit, "tsp");
+  assert.equal(ginger.amount, 4.5);
+  const water = Store.scaled(chana, 8).find((x) => x.ing === "water");
+  assert.equal(water.amount, 600);
 });
 
 test("shopping list adds up the same ingredient across recipes", () => {
   const { DATA, Store } = load();
-  Store.addToShopping(DATA.recipe("plov"), 6);        // 2 onions
-  Store.addToShopping(DATA.recipe("lagman"), 4);      // 1 onion
+  Store.addToShopping(DATA.recipe("tagine"), 4);      // 2 onions
+  Store.addToShopping(DATA.recipe("chana"), 4);       // 2 onions
   const onion = Store.shopping().items.filter((x) => x.ing === "onion");
   assert.equal(onion.length, 1);
-  assert.equal(onion[0].amount, 3);
-  assert.deepEqual([...onion[0].from], ["plov", "lagman"]);
-  // tbsp and tsp of the same spice become one line
-  Store.addToShopping(DATA.recipe("moshkichiri"), 5); // 1 tsp cumin (plov had 1 tbsp)
-  const cumin = Store.shopping().items.filter((x) => x.ing === "cumin");
-  assert.equal(cumin.length, 1);
-  assert.equal(cumin[0].amount, 4); // 3 tsp + 1 tsp
+  assert.equal(onion[0].amount, 4);
+  assert.deepEqual([...onion[0].from], ["tagine", "chana"]);
+  // tbsp and tsp of the same ingredient become one line (in tsp)
+  Store.addToShopping(DATA.recipe("ramen"), 2);       // 4 tbsp soy sauce
+  Store.addToShopping(DATA.recipe("padthai"), 2);     // no soy sauce
+  Store.addToShopping(DATA.recipe("bibimbap"), 4);    // 3 tbsp soy sauce
+  const soy = Store.shopping().items.filter((x) => x.ing === "soy");
+  assert.equal(soy.length, 1);
+  assert.equal(soy[0].amount, 21); // 12 tsp + 9 tsp
 });
 
 test("staples are not added, and different ingredients are not merged", () => {
@@ -125,11 +127,11 @@ test("undo restores a cleared list and a cleared plan", () => {
   assert.equal(Store.shopping().items.length, 0);
   undo();
   assert.equal(Store.shopping().items.length, before);
-  Store.setMeal("mon", "lunch", "plov");
+  Store.setMeal("mon", "lunch", "paella");
   const undoPlan = Store.clearPlan();
   assert.deepEqual(Store.plan(), {});
   undoPlan();
-  assert.equal(Store.plan().mon.lunch, "plov");
+  assert.equal(Store.plan().mon.lunch, "paella");
 });
 
 test("favourites and notes persist", () => {
@@ -147,4 +149,11 @@ test("aliases find ingredients in other words", () => {
   assert.ok(has("aubergine", "eggplant"));
   assert.ok(has("springonion", "scallions"));
   assert.ok(has("cilantro", "coriander leaves"));
+});
+
+test("the Uzbek recipes are gone and North America replaced Central Asia", () => {
+  const { DATA } = load();
+  assert.equal(DATA.recipe("plov"), null);
+  assert.ok(!DATA.REGIONS.includes("central-asia"));
+  assert.ok(DATA.REGIONS.includes("north-america"));
 });

@@ -87,7 +87,7 @@ const PAGES = {
         <div id="regions" class="regions"></div>
       </section>
       <section class="section" aria-labelledby="classicsTitle">
-        <div class="section-head"><div><p class="label" data-i18n="home.classicsAnnot"></p><h2 id="classicsTitle" data-i18n="home.classics"></h2></div><a class="more-link" href="recipes.html?cuisine=central-asia" data-i18n="home.allUzbek"></a></div>
+        <div class="section-head"><div><p class="label" data-i18n="home.classicsAnnot"></p><h2 id="classicsTitle" data-i18n="home.classics"></h2></div><a class="more-link" href="recipes.html?cat=main" data-i18n="home.allUzbek"></a></div>
         <div id="classicList" class="classics"></div>
       </section>
       <section class="section" aria-labelledby="quickTitle">

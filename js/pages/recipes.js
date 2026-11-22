@@ -24,7 +24,7 @@
     const s = { ...DEFAULTS };
     s.q = (p.get("q") || "").slice(0, 60);
     if (["all", ...CATEGORIES].includes(p.get("cat"))) s.cat = p.get("cat");
-    const cuisine = p.get("cuisine") === "uz" ? "central-asia" : p.get("cuisine"); // old links
+    const cuisine = ["uz", "central-asia"].includes(p.get("cuisine")) ? "all" : p.get("cuisine"); // old links to the Uzbek recipes
     if (OPTIONS.cuisine.includes(cuisine)) s.cuisine = cuisine;
     ["maxTime", "level", "sort"].forEach((k) => OPTIONS[k].includes(p.get(k)) && (s[k] = p.get(k)));
     s.veg = p.get("veg") === "1";

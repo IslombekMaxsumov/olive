@@ -1,4 +1,4 @@
-/* One recipe (recipe.html?id=plov), laid out like a cookbook spread:
+/* One recipe (recipe.html?id=paella), laid out like a cookbook spread:
    - servings calculator: every amount is scaled (and remembered); eggs stay
      whole, and salt and spices get a "taste" reminder when you scale a lot
    - ingredient checklist, and "add to shopping list" (all, or only the ones

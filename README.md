@@ -1,6 +1,6 @@
 # OLIVE — an independent international cookbook
 
-Site #6 of my 10-websites course project: 29 recipes from Uzbekistan and nine more regions of the world, in Uzbek, Russian and English. Plain HTML, CSS and JavaScript (no framework, no build step, no backend); everything you save stays in your browser.
+Site #6 of my 10-websites course project: 29 recipes from ten regions of the world, in Uzbek, Russian and English. (The 13 Uzbek dishes were replaced on 2026-11-22, because no consistent, professional photos of them could be found.) Plain HTML, CSS and JavaScript (no framework, no build step, no backend); everything you save stays in your browser.
 
 ## Pages
 | Page | What it does |
@@ -22,7 +22,7 @@ A quiet, typeset cookbook rather than a big editorial site.
 - Logo: the O is a sliced stuffed olive (sage and terracotta), "LIVE" is EB Garamond Medium, converted to outlines (`assets/brand`, inline in `js/logo.js`).
 
 ## Recipes
-- 13 Uzbek dishes and 16 from Eastern Europe, Western Europe, the Mediterranean, East Asia, Southeast Asia, South Asia, the Middle East, North Africa and Latin America (`js/data.js`).
+- 29 dishes from East Asia, Southeast Asia, South Asia, the Middle East, North Africa, the Mediterranean, Western Europe, Eastern Europe, Latin America and North America (`js/data.js`).
 - Every recipe has prep and cooking time, difficulty, kcal per serving (estimate), optional ingredients marked, and cook's notes with substitutions and what is traditional versus adapted.
 - The recipes are written from common, well-established home versions of each dish. They have **not** been cooked and tested for this project.
 - Scaling: amounts are rounded to what a cook can measure (½ onion, whole garlic cloves, ¼ spoons); eggs, tortillas and pita stay whole; with a big change in servings a note says to add salt and spices gradually.

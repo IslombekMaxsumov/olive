@@ -2,7 +2,7 @@
    recipes are ranked by how many of their ingredients you already have
    (salt, pepper, oil and water don't count: every kitchen has them).
    With no ingredients added, the page shows the magazine sections:
-   featured recipe, around the world, Uzbek classics, quick meals, collections. */
+   featured recipe, around the world, comfort classics, quick meals, collections. */
 (function () {
   "use strict";
   const { t } = Core;
@@ -12,7 +12,9 @@
   const QUICK = ["onion", "potato", "tomato", "egg", "rice", "chicken", "beef", "flour", "carrot", "garlic", "pepper", "milk"];
   const lang = () => Core.getLang();
 
-  const choosable = () => Object.values(INGREDIENTS).filter((i) => !i.staple);
+  // only ingredients that at least one recipe uses (and not salt, oil, water...)
+  const used = new Set(RECIPES.flatMap((r) => r.items.map((it) => it.ing)));
+  const choosable = () => Object.values(INGREDIENTS).filter((i) => !i.staple && used.has(i.id));
   const needs = (r) => [...new Set(r.items.filter((it) => !INGREDIENTS[it.ing].staple && !it.optional).map((it) => it.ing))];
   const words = (i) => [...Object.values(i.name), ...i.aliases].map((w) => w.toLowerCase());
 
@@ -121,14 +123,14 @@
     const h = t("home.title", { mark: "\u0000" }).split("\u0000");
     $("homeTitle").replaceChildren(h[0], el("em", { text: t("home.titleMark") }), h[1] || "");
     $("heroAnnot").textContent = t("home.annot", { count: RECIPES.length, regions: DATA.REGIONS.length });
-    const cover = DATA.recipe("plov");
+    const cover = DATA.recipe("paella");
     $("heroArt").replaceChildren(
       el("a", { class: "photo-link", href: "recipe.html?id=" + cover.id, tabindex: "-1", "aria-hidden": "true" }, photo(cover, { eager: true, sizes: "(min-width: 900px) 440px, 100vw" })),
       el("a", { class: "hero-caption", href: "recipe.html?id=" + cover.id },
         el("span", { text: t("home.onCover") }), el("strong", { text: recipeName(cover) })));
 
     // featured recipe: changes every day, from the dishes that aren't on the cover
-    const pool = RECIPES.filter((r) => r.id !== "plov" && window.PHOTOS && PHOTOS[r.id]);
+    const pool = RECIPES.filter((r) => r.id !== cover.id && window.PHOTOS && PHOTOS[r.id]);
     const f = pool[Math.floor(Date.now() / 86400000) % pool.length];
     $("feature").replaceChildren(
       el("a", { class: "photo-link", href: "recipe.html?id=" + f.id, tabindex: "-1", "aria-hidden": "true" }, photo(f, { sizes: "(min-width: 900px) 58vw, 100vw" })),
@@ -148,7 +150,7 @@
         el("span", { class: "dishes", text: list.slice(0, 3).map(recipeName).join(", ") + (list.length > 3 ? "…" : "") }));
     }));
 
-    $("classicList").replaceChildren(...["manti", "samsa", "lagman", "dimlama"].map((id) =>
+    $("classicList").replaceChildren(...["ramen", "tagine", "borscht", "butterchicken"].map((id) =>
       Site.card(DATA.recipe(id), { sizes: "(min-width: 1120px) 270px, (min-width: 600px) 45vw, 100vw" })));
 
     $("quickList").replaceChildren(...RECIPES.filter((r) => r.time <= 35).sort((a, b) => a.time - b.time).map((r, i) =>
