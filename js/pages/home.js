@@ -125,7 +125,9 @@
     $("heroAnnot").textContent = t("home.annot", { count: RECIPES.length, regions: DATA.REGIONS.length });
     const cover = DATA.recipe("paella");
     $("heroArt").replaceChildren(
-      el("a", { class: "photo-link", href: "recipe.html?id=" + cover.id, tabindex: "-1", "aria-hidden": "true" }, photo(cover, { eager: true, sizes: "(min-width: 900px) 440px, 100vw" })),
+      el("a", { class: "photo-link", href: "recipe.html?id=" + cover.id, tabindex: "-1", "aria-hidden": "true" }, photo(cover, { eager: true, sizes: "(min-width: 900px) 820px, 100vw" })),
+      // ↑ the frame is 430px wide but portrait (4:5); a landscape photo has to be drawn
+      //   about 810px wide to cover it, so ask for that size or it looks blurry
       el("a", { class: "hero-caption", href: "recipe.html?id=" + cover.id },
         el("span", { text: t("home.onCover") }), el("strong", { text: recipeName(cover) })));
 
