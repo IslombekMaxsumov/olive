@@ -19,7 +19,7 @@ A quiet, typeset cookbook rather than a big editorial site.
 - Proportions: content is centred at 1120px, recipe text sits in a 760px column, the header is 60px.
 - Thin stone separators instead of boxes and shadows; nearly square corners; no gradients or decorative shapes. Terracotta only for step numbers and small highlights.
 - Photos: one proportion per place (4:3 cards, 3:2 recipe photos) and the same gentle warm grading on every photo (`.photo img` in `css/site.css`). `../olive-photo-brief.md` describes one consistent 45° "photo session"; replacement images go in `assets/photos/new/<id>.jpg` and `node tools/import-photos.mjs` adds them (`--generated` labels AI images as such).
-- Logo: the O is a sliced stuffed olive (sage and terracotta), "LIVE" is EB Garamond Medium, converted to outlines (`assets/brand`, inline in `js/logo.js`).
+- Logo: a round seal with one olive (sage, terracotta pimento) and a leaf, next to the full word OLIVE in letter-spaced EB Garamond Medium, converted to outlines. `tools/logo.cjs` draws it (needs `npm i opentype.js`) into `assets/brand` (logo, dark, mono, symbol, favicon) and `js/logo.js` (inline, follows the theme). The earlier logo, an olive as the O, read as "LIVE".
 
 ## Recipes
 - 29 dishes from East Asia, Southeast Asia, South Asia, the Middle East, North Africa, the Mediterranean, Western Europe, Eastern Europe, Latin America and North America (`js/data.js`).

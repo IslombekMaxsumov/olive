@@ -79,11 +79,9 @@
 
   /* ---------- logo (inline, takes the theme colours; js/logo.js) ---------- */
   function logoSvg() {
-    const o = LOGO.olive;
+    // seal (ring, olive, leaf) + the word OLIVE; colours come from CSS classes
     return svgEl("svg", { viewBox: `0 0 ${LOGO.width} 48`, class: "logo-svg", "aria-hidden": "true", focusable: "false" },
-      svgEl("g", { transform: `translate(${o.cx} ${o.cy}) rotate(${o.tilt})` },
-        svgEl("ellipse", { rx: o.rx, ry: o.ry, class: "logo-olive" }),
-        svgEl("ellipse", { rx: o.prx, ry: o.pry, class: "logo-pimento" })),
+      LOGO.parts.map(([tag, attrs, cls]) => svgEl(tag, { ...attrs, class: cls })),
       svgEl("path", { d: LOGO.word, class: "logo-word" }));
   }
 
