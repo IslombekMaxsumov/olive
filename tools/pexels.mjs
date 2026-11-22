@@ -1,7 +1,8 @@
 // Downloads the chosen Pexels photo for every recipe in three widths and
 // rewrites assets/photos/manifest.json, then rebuilds js/photos.js.
 // Run:  node tools/pexels.mjs
-// The photos were picked by eye (2026-11-22) to look like one set: about a
+// The photos were picked by eye (2026-11-22; 7 soft-focus ones were swapped
+// the same day after a sharpness check) to look like one set: about a
 // 45° angle, soft daylight, light or neutral surfaces. Pexels License: free
 // to use, no attribution required (we credit the photographers anyway).
 // pos = CSS object-position, for portrait photos cropped into 4:3 frames.
@@ -11,21 +12,21 @@ import { execFileSync } from "node:child_process";
 const PICKS = {
   paella: [36878063, "Zakhar Vozhdaienko", "delicious-homemade-seafood-paella-in-pan"],
   ramen: [31393431, "Matheus Bertelli", "delicious-japanese-ramen-with-egg-and-scallions"],
-  springrolls: [6646031, "RDNE Stock project", "spring-rolls-on-the-plate"],
+  springrolls: [12386446, "Quang Nguyen Vinh", "seafood-on-a-plate"],
   pho: [4153908, "Nam Phong Bùi", "pho-soup-noodles-in-white-ceramic-bowl"],
   chana: [9287035, "Muhammad Khawar Nazir", "close-up-of-chana-masala"],
   lentilsoup: [12077978, "Alex Bayev", "turkish-creamy-soup", "50% 78%"],
   tabbouleh: [15108402, "Shameel mukkath", "a-bowl-of-salad-with-tomatoes-parsley-and-lemon"],
   tagine: [2291603, "Zak Chapman", "purple-ceramic-jar"],
-  focaccia: [18453905, "Lucie Liz", "fresh-focaccia-italian-bread", "50% 45%"],
+  focaccia: [9433002, "Marina Leonova", "food-on-plate"],
   crumble: [9266852, "Valeria Boltneva", "closeup-of-an-apple-crumble-on-a-plate", "50% 35%"],
   ceviche: [17613668, "Annavitoria Martinssousa", "soup-in-bowl"],
   bananabread: [4114141, "alleksana", "banana-bread-on-the-table"],
-  pancakes: [7144297, "Monstera Production", "a-plate-of-pancakes", "50% 38%"],
+  pancakes: [6758384, "alleksana", "stacks-of-pancakes-on-plates", "50% 70%"],
   borscht: [32020817, "Helen Brudna", "delicious-borscht-soup-with-sour-cream-and-rye-bread", "50% 40%"],
   blini: [4966606, "cottonbro studio", "brown-bread-on-brown-wooden-plate", "50% 40%"],
-  syrniki: [36612300, "Valeria Boltneva", "delicious-breakfast-syrniki-with-fresh-berries", "50% 62%"],
-  omelette: [26161037, "Serdar Göksu", "omelette-with-vegetable-salad"],
+  syrniki: [17906653, "Nadin Sh", "pancakes-with-coffee-for-breakfast", "50% 33%"],
+  omelette: [25402351, "Oğuzhan Karataş", "breakfast-on-plate", "50% 42%"],
   greek: [9853236, "Дарья Евстигнеева", "salad-on-red-plate"],
   pasta: [36430170, "Willians Huerta", "delicious-spaghetti-with-tomato-sauce-on-plate"],
   chicken: [5956831, "Katrin Bolovtsova", "roasted-chicken-and-potatoes-on-white-ceramic-plate", "50% 62%"],
@@ -33,10 +34,10 @@ const PICKS = {
   katsu: [20127885, "Jazheel Inocencio", "soup-with-meat-and-rice"],
   bibimbap: [7491952, "minchephoto photography", "bibimbap-on-black-ceramic-bowl", "50% 58%"],
   padthai: [34723305, "UNDO KIM", "authentic-pad-thai-dish-with-shrimp-and-bean-sprouts"],
-  tinga: [14930613, "Shameel mukkath", "tacos-on-plate-with-dipping-sauce", "50% 72%"],
+  tinga: [17429140, "Jonathan Reynaga", "homemade-tacos-on-a-table"],
   butterchicken: [9738981, "Alberta Studios", "meat-stout-with-lemon"],
   falafel: [6275189, "Nataliya Vaitkevich", "falafel-and-tahini-sauce"],
-  shakshuka: [35672949, "Valeria Boltneva", "delicious-shakshuka-in-a-cast-iron-skillet", "50% 62%"],
+  shakshuka: [6275160, "Nataliya Vaitkevich", "overhead-shot-of-shakshuka-in-a-pan", "50% 58%"],
   ratatouille: [16699418, "Marcelo Verfe", "a-vegetable-stew-in-a-dish"],
 };
 const WIDTHS = [500, 960, 1600];

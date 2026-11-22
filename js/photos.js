@@ -75,14 +75,14 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "Three summer rolls with prawns and herbs on a white plate, a small bowl of sauce",
-   "ru": "Три летних ролла с креветками и зеленью на белой тарелке, рядом соус",
-   "uz": "Oq likopchada krevetka va ko'katli uchta bahorgi rulet, yonida sous"
+   "en": "Summer rolls with prawns and herbs on a black plate with lettuce and Thai basil",
+   "ru": "Летние роллы с креветками и зеленью на чёрной тарелке с салатом и тайским базиликом",
+   "uz": "Qora likopchada salat bargi va tay rayhoni bilan krevetka va ko'katli bahorgi rulet"
   },
-  "by": "RDNE Stock project",
+  "by": "Quang Nguyen Vinh",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/spring-rolls-on-the-plate-6646031/",
+  "source": "https://www.pexels.com/photo/seafood-on-a-plate-12386446/",
   "site": "Pexels",
   "pos": null,
   "generated": false
@@ -243,16 +243,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "Golden focaccia on baking paper, a piece torn off, a little bowl of olive oil",
-   "ru": "Золотистая фокачча на пергаменте, отломанный кусок, пиала оливкового масла",
-   "uz": "Pergamentdagi tillarang fokachcha, uzilgan bo'lak va bir piyola zaytun moyi"
+   "en": "Focaccia in a baking tin, topped with tomato, olives, parsley and rosemary",
+   "ru": "Фокачча в форме для выпечки с помидорами, оливками, петрушкой и розмарином",
+   "uz": "Pishirish qolipidagi pomidor, zaytun, petrushka va bibariyali fokachcha"
   },
-  "by": "Lucie Liz",
+  "by": "Marina Leonova",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/fresh-focaccia-italian-bread-18453905/",
+  "source": "https://www.pexels.com/photo/food-on-plate-9433002/",
   "site": "Pexels",
-  "pos": "50% 45%",
+  "pos": null,
   "generated": false
  },
  "crumble": {
@@ -355,16 +355,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "A stack of thick pancakes on a white fluted plate",
-   "ru": "Стопка пышных панкейков на белой рифлёной тарелке",
-   "uz": "Oq qirrali likopchada qalin panqueklar"
+   "en": "Two stacks of pancakes with berries, almonds and chocolate sauce on white plates",
+   "ru": "Две стопки панкейков с ягодами, миндалём и шоколадным соусом на белых тарелках",
+   "uz": "Oq likopchalarda rezavor, bodom va shokolad sousli ikki taxlam panquek"
   },
-  "by": "Monstera Production",
+  "by": "alleksana",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/a-plate-of-pancakes-7144297/",
+  "source": "https://www.pexels.com/photo/stacks-of-pancakes-on-plates-6758384/",
   "site": "Pexels",
-  "pos": "50% 38%",
+  "pos": "50% 70%",
   "generated": false
  },
  "borscht": {
@@ -439,16 +439,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "Syrniki dusted with sugar on a white plate with berries, sour cream and jam",
-   "ru": "Сырники в сахарной пудре на белой тарелке с ягодами, сметаной и вареньем",
-   "uz": "Oq likopchada rezavorlar, smetana va murabbo bilan shakar sepilgan sirniki"
+   "en": "Two golden syrniki on a white plate with blueberries, jam and sour cream",
+   "ru": "Два золотистых сырника на белой тарелке с черникой, вареньем и сметаной",
+   "uz": "Oq likopchada ko'k meva, murabbo va smetana bilan ikkita tillarang sirniki"
   },
-  "by": "Valeria Boltneva",
+  "by": "Nadin Sh",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/delicious-breakfast-syrniki-with-fresh-berries-36612300/",
+  "source": "https://www.pexels.com/photo/pancakes-with-coffee-for-breakfast-17906653/",
   "site": "Pexels",
-  "pos": "50% 62%",
+  "pos": "50% 33%",
   "generated": false
  },
  "omelette": {
@@ -467,16 +467,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "An omelette with herbs on a white plate with a green salad, by a window",
-   "ru": "Омлет с зеленью на белой тарелке с зелёным салатом у окна",
-   "uz": "Deraza yonida oq likopchada ko'kat va yashil salat bilan omlet"
+   "en": "A folded omelette with herbs on a white plate with a green salad",
+   "ru": "Сложенный омлет с зеленью на белой тарелке с зелёным салатом",
+   "uz": "Oq likopchada yashil salat bilan buklangan ko'katli omlet"
   },
-  "by": "Serdar Göksu",
+  "by": "Oğuzhan Karataş",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/omelette-with-vegetable-salad-26161037/",
+  "source": "https://www.pexels.com/photo/breakfast-on-plate-25402351/",
   "site": "Pexels",
-  "pos": null,
+  "pos": "50% 42%",
   "generated": false
  },
  "greek": {
@@ -691,16 +691,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "Chicken tacos on a plate with sour cream and red salsa",
-   "ru": "Тако с курицей на тарелке со сметаной и красной сальсой",
-   "uz": "Likopchada smetana va qizil salsa bilan tovuqli tako"
+   "en": "Four small corn tortilla tacos with chicken, onion and cilantro on a white plate",
+   "ru": "Четыре маленьких тако из кукурузных лепёшек с курицей, луком и кинзой на белой тарелке",
+   "uz": "Oq likopchada tovuq, piyoz va kashnichli to'rtta kichik makkajo'xori tako"
   },
-  "by": "Shameel mukkath",
+  "by": "Jonathan Reynaga",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/tacos-on-plate-with-dipping-sauce-14930613/",
+  "source": "https://www.pexels.com/photo/homemade-tacos-on-a-table-17429140/",
   "site": "Pexels",
-  "pos": "50% 72%",
+  "pos": null,
   "generated": false
  },
  "butterchicken": {
@@ -775,16 +775,16 @@ window.PHOTOS = {
    ]
   ],
   "alt": {
-   "en": "Shakshuka with feta and herbs in a cast-iron pan, a teapot behind it",
-   "ru": "Шакшука с брынзой и зеленью в чугунной сковороде, позади чайник",
-   "uz": "Cho'yan tovada brinza va ko'katli shakshuka, orqada choynak"
+   "en": "Shakshuka seen from above: eggs in tomato sauce with parsley in a pan, on a sage-green table",
+   "ru": "Шакшука сверху: яйца в томатном соусе с петрушкой в сковороде на серо-зелёном столе",
+   "uz": "Yuqoridan shakshuka: kulrang-yashil stolda tovadagi petrushkali tomat sousidagi tuxumlar"
   },
-  "by": "Valeria Boltneva",
+  "by": "Nataliya Vaitkevich",
   "license": "Pexels License",
   "licenseUrl": "https://www.pexels.com/license/",
-  "source": "https://www.pexels.com/photo/delicious-shakshuka-in-a-cast-iron-skillet-35672949/",
+  "source": "https://www.pexels.com/photo/overhead-shot-of-shakshuka-in-a-pan-6275160/",
   "site": "Pexels",
-  "pos": "50% 62%",
+  "pos": "50% 58%",
   "generated": false
  },
  "ratatouille": {
