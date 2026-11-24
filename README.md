@@ -1,5 +1,7 @@
 # OLIVE — an independent international cookbook
 
+**Live site: https://islombekmaxsumov.github.io/olive/**
+
 Site #6 of my 10-websites course project: 29 recipes from ten regions of the world, in Uzbek, Russian and English. (The 13 Uzbek dishes were replaced on 2026-11-22, because no consistent, professional photos of them could be found.) Plain HTML, CSS and JavaScript (no framework, no build step, no backend); everything you save stays in your browser.
 
 ## Pages
