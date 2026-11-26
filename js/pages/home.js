@@ -123,7 +123,7 @@
     const h = t("home.title", { mark: "\u0000" }).split("\u0000");
     $("homeTitle").replaceChildren(h[0], el("em", { text: t("home.titleMark") }), h[1] || "");
     $("heroAnnot").textContent = t("home.annot", { count: RECIPES.length, regions: DATA.REGIONS.length });
-    const cover = DATA.recipe("paella");
+    const cover = DATA.recipe("shakshuka"); // one pan, calm light background: fits "one pot at a time"
     $("heroArt").replaceChildren(
       el("a", { class: "photo-link", href: "recipe.html?id=" + cover.id, tabindex: "-1", "aria-hidden": "true" }, photo(cover, { eager: true, sizes: "(min-width: 900px) 820px, 100vw" })),
       // ↑ the frame is 430px wide but portrait (4:5); a landscape photo has to be drawn
