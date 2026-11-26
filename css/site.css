@@ -184,8 +184,10 @@ a:hover .photo img, .recipe-card:hover .photo img, .photo-link:hover img { trans
 .region .dishes { grid-column: 1 / -1; font-size: 0.8125rem; color: var(--ink-2); }
 .region:hover strong { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
-/* Uzbek classics: four cards in a row */
-.classics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: var(--s8) var(--s5); }
+/* comfort classics: four cards, as 1, 2 or 4 columns so one card never sits alone on a row */
+.classics { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s8) var(--s5); }
+@media (min-width: 560px) { .classics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .classics { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* quick meals: a short numbered list */
 .quick-index { display: grid; max-width: var(--read); border-top: 1px solid var(--line); }
@@ -347,7 +349,7 @@ body.has-timers main { padding-bottom: var(--timer-h, 0px); }
 }
 
 /* ---------- shopping list ---------- */
-.shop-layout { display: grid; gap: var(--s8); }
+.shop-layout { display: grid; gap: var(--s8); margin-top: var(--s8); } /* room between the title and the first aisle */
 @media (min-width: 900px) { .shop-layout { grid-template-columns: minmax(0, var(--read)) 280px; justify-content: space-between; gap: var(--s12); align-items: start; } }
 .shop-side { display: grid; gap: var(--s5); align-content: start; }
 @media (min-width: 900px) { .shop-side { position: sticky; top: calc(var(--header-h) + 20px); order: 2; } }

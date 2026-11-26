@@ -123,8 +123,16 @@
       type: "button", class: "fav-btn" + (small ? " fav-btn-small" : ""), "aria-pressed": String(on), "data-fav": r.id,
       "aria-label": t(on ? "fav.remove" : "fav.add", { name: recipeName(r) }),
       onclick: () => {
-        const now = Store.toggleFavourite(r.id); // the page redraws here
+        const now = Store.toggleFavourite(r.id); // most pages redraw here
         Core.toast(t(now ? "fav.added" : "fav.removed", { name: recipeName(r) }));
+        // pages that only redraw part of themselves (home, a recipe's related cards) keep the
+        // old buttons, so bring every heart for this recipe up to date in place
+        document.querySelectorAll(`.fav-btn[data-fav="${r.id}"]`).forEach((b) => {
+          b.setAttribute("aria-pressed", String(now));
+          b.setAttribute("aria-label", t(now ? "fav.remove" : "fav.add", { name: recipeName(r) }));
+          const label = b.querySelector("span");
+          if (label) label.textContent = t(now ? "fav.saved" : "fav.save");
+        });
         // keep keyboard focus on the (new) button for this recipe, with a small "pop"
         const again = document.querySelector(`.fav-btn[data-fav="${r.id}"]${small ? ".fav-btn-small" : ":not(.fav-btn-small)"}`);
         if (again) {
