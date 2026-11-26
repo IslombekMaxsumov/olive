@@ -12,9 +12,7 @@ const head = (page, script) => `<!doctype html>
   <meta name="description" content="">
   <meta name="theme-color" content="#f5f1e8">
   <link rel="icon" href="assets/brand/olive-favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="css/fonts.css">
   <!-- Apply the saved theme before the page is drawn, so it never flashes. -->
   <script>
     window.APP_NS = "recipes";

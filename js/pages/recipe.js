@@ -145,7 +145,11 @@
     function draw() {
       const bar = $("timerBar");
       bar.hidden = list.length === 0;
-      const short = (step) => r.steps[step].text[Core.getLang()].split(/[.,:;]/)[0].slice(0, 48);
+      // the step's first clause; if still long, cut at a whole word and add "…"
+      const short = (step) => {
+        const s = r.steps[step].text[Core.getLang()].split(/[.,:;]/)[0];
+        return s.length <= 48 ? s : s.slice(0, 48).replace(/\s+\S*$/, "") + "…";
+      };
       bar.replaceChildren(...list.map((tm) => el("div", { class: "timer" + (tm.done ? " is-done" : "") },
         el("p", { class: "timer-name" }, t("recipe.step", { n: tm.step + 1 }), el("strong", { text: tm.done ? t("timer.finishedShort") : short(tm.step) })),
         el("span", { class: "timer-time", text: tm.done ? t("timer.done") : clock(left(tm)) }),
